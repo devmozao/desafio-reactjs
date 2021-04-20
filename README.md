@@ -71,7 +71,7 @@ Para a entrega do desafio, faça o seguinte:
 
 •	Suba o código desenvolvido em seu github pessoal. [*Docs aqui*](https://docs.github.com/pt/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)  
 •	Depois, vá até o (*este link*)[https://github.com/devMozao/desafio-reactjs/issues/new] e crie uma issue. Nesta issue, deixe o link do seu repositório com o código do seu desafio, e coloque a tag de *code review* na issue. (cor laranja na tag)  
-•	Após isso, basta esperar. Vou entrar em contato contigo, e vamos marcar uma data pra fazer esse code review e uma sessão de feedback do que achamos do seu projeto, com os pontos positivos, negativos, e sugerindo materiais novos de estudos.
+•	Após isso, basta esperar. Vou entrar em contato contigo, e vamos marcar uma data pra fazer esse code review e uma sessão de feedback do que achamos do seu projeto.  
 •	Caso tenha dúvidas e esteja travado, basta abrir uma issue no mesmo link, com uma tag de *ajuda* (cor verde)  
 
 ## Observações importantes
