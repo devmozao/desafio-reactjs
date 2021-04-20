@@ -67,7 +67,12 @@ Clonar o repositório em sua máquina local e criar um branch novo para o seu c�
 
 
 ## Entrega do desafio
-Subir o código no seu github pessoal no branch novo que foi criado. A partir deste branch, abrir um Merge Request deste para o branch main/master com o código que foi desenvolvido. Nisso, me adicione no projeto (@devMozao) e coloque como revisor do Merge Request. Não faça o merge até ter o meu feedback.
+Para a entrega do desafio, faça o seguinte:
+
+•	Suba o código desenvolvido em seu github pessoal. [*Docs aqui*](https://docs.github.com/pt/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)  
+•	Depois, vá até o (*este link*)[https://github.com/devMozao/desafio-reactjs/issues/new] e crie uma issue. Nesta issue, deixe o link do seu repositório com o código do seu desafio, e coloque a tag de *code review* na issue. (cor laranja na tag)  
+•	Após isso, basta esperar. Vou entrar em contato contigo, e vamos marcar uma data pra fazer esse code review e uma sessão de feedback do que achamos do seu projeto, com os pontos positivos, negativos, e sugerindo materiais novos de estudos.
+•	Caso tenha dúvidas e esteja travado, basta abrir uma issue no mesmo link, com uma tag de *ajuda* (cor verde)  
 
 ## Observações importantes
 A ideia deste desafio é entender como você domina os conceitos básicos de React, com um desafio no mundo real, da forma mais “sincera” possível. E, a partir dele, entender como você traz este conhecimento pra debate com outros profissionais e como você o apresenta como solução técnica que traz valor para um cliente/usuário final num ambiente de trabalho. 
