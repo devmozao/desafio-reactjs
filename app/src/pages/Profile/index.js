@@ -12,7 +12,7 @@ import './styles.css';
 
 function Profile() {
   const { username } = useParams();
-  const [ userDescriptionData, setUserDescriptionData ] = useState({});
+  const [ userDescriptionData, setUserDescriptionData ] = useState();
   const [ cardsData, setCardsData ] = useState([]);
 
   useEffect(() => {

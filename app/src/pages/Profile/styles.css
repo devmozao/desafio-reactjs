@@ -3,6 +3,7 @@
 .profile {
     flex: 1;
     height: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,6 +12,7 @@
 .profile .scroll-view {
     overflow-y: scroll;
     height: 420px;
+    width: 100%;
 }
 
 .profile .repository-cards {
@@ -22,10 +24,17 @@
     padding: 0px 10px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
+    .profile {
+        width: 90%;
+    }
+}
+
+@media (max-width: 760px) {
     .profile {
         flex-direction: column;
         padding: 50px 0;
+        width: 100%;
     }
     .profile .user-description {
         margin-bottom: 50px;
