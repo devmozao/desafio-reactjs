@@ -21,3 +21,21 @@
     flex-direction: column;
     padding: 0px 10px;
 }
+
+@media (max-width: 600px) {
+    .profile {
+        flex-direction: column;
+        padding: 50px 0;
+    }
+    .profile .user-description {
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+    .profile .scroll-view {
+        overflow-y: hidden;
+        height: 100%;
+    }
+    .profile .repository-cards {
+        margin-left: 0px;
+    }
+}

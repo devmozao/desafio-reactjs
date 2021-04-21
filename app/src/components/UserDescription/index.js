@@ -21,7 +21,7 @@ function UserDescription({data}) {
         <div className="user-status">
           <span>{data.followers} followers</span>
           <span>{data.following} following</span>
-          <span>100 stars</span>
+          <span>{data.public_repos} repositories</span>
         </div>
         <div className="user-extra-info">
           <div className="extra-info-item">
@@ -40,7 +40,7 @@ function UserDescription({data}) {
             <img alt="Website" src={Website} />
             <span>{data.blog || 'No website'}</span>
           </a>
-          <a href={data.twitter_username} target="_blank" className="extra-info-item">
+          <a href={`https://twitter.com/${data.twitter_username}`} target="_blank" className="extra-info-item">
             <img alt="Twitter" src={Twitter} />
             <span>{data.twitter_username || 'No twitter'}</span>
           </a>

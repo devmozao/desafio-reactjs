@@ -29,7 +29,8 @@ function Profile() {
         followers: data.followers,
         following: data.following,
         twitter_username: data.twitter_username,
-        html_url: data.html_url
+        html_url: data.html_url,
+        public_repos: data.public_repos
       }
       setUserDescriptionData(newUserDescriptionData);
     });
