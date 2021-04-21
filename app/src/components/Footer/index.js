@@ -4,9 +4,9 @@ import './styles.css';
 
 function Footer() {
   return (
-      <div className="footer">
-          <span>Project made by Vinicius Floriano</span>
-      </div>
+    <footer>
+      <span>Project made by Vinicius Floriano</span>
+    </footer>
   );
 }
 

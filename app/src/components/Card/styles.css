@@ -1,0 +1,39 @@
+
+.repository-cards .repository-card {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 15px 20px;
+    border-radius: 3rem;
+    margin-top: 15px;
+}
+.repository-cards .repository-card:first-child {
+    margin-top: 0;
+}
+
+.repository-cards .repository-card p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-overflow: ellipsis;
+    text-align: justify;
+
+    margin: 10px 0;
+    
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.repository-cards .repository-card .repository-card-bottom {
+    display: flex;
+    align-items: center;
+}
+
+.repository-cards .repository-card .repository-card-bottom > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.repository-cards .repository-card .repository-card-bottom > div span {
+    margin: 10px 10px 10px 5px;
+}

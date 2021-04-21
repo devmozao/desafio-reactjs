@@ -1,0 +1,31 @@
+/* HEADER STYLES */
+
+header {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 10px;
+}
+
+header .back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+header .back-button img {
+    height: 3.2rem;
+    width: 3.2rem;
+}
+
+header .back-button span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 2.9rem;
+    margin-left: 5px;
+    
+    color: #FFFFFF;
+}
