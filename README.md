@@ -11,7 +11,7 @@ Criado em: Janeiro/2021
 Construir uma aplicação web em ReactJS que busque o perfil de desenvolvedores na API pública do GitHub e exibir os seus dados em uma página de perfil.
 
 ## Como começar o desafio
-Clonar o repositório em sua máquina local e criar um branch novo para o seu código.
+Dar um fork no projeto, clonar o repositório em sua máquina local e criar um branch novo para o seu código.
 
 
 ## Histórias
