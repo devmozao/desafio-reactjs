@@ -1,0 +1,69 @@
+/* HOME PAGE STYLES */
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+
+    width: 90%;
+    max-width: 460px;
+    
+}
+
+.home h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 6.8rem;
+    line-height: 9.2rem;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0px 3px 13px rgba(0, 0, 0, 0.22);
+    margin-bottom: 8rem;
+}
+
+.home form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 5rem;
+}
+
+
+.home form input {
+    height: 5.2rem;
+    border: none;
+    padding: 1.5rem 2rem;
+    border-radius: 5rem;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: #000000;
+}
+
+.home form button {
+    width: 5.2rem;
+    height: 5.2rem;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    padding-right: 1.2rem;
+    padding-top: 4px;
+
+    transition: 0.6s;
+}
+
+.home form button img {
+    width: 2.8rem;
+    height: 2.8rem;
+}
+
+.home form button:hover img {
+    opacity: 0.7;
+}
+
