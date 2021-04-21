@@ -5,19 +5,19 @@ import './styles.css';
 import Star from '../../assets/star.svg';
 import LastTimeUpdated from '../../assets/clock.svg';
 
-function Card() {
+function Card({data}) {
   return (
     <div className="repository-card">
-      <h1>Repository Name</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum...</p>
+      <a href={data.html_url} target="_blank" >{data.name}</a>
+      <p>{data.description}</p>
       <div className="repository-card-bottom">
         <div>
           <img alt="Star" src={Star} />
-          <span>100 stars</span>
+          <span>{data.stargazers_count} stars</span>
         </div>
         <div>
           <img alt="Last time updated" src={LastTimeUpdated}/>
-          <span>Updated 30 days ago</span>
+          <span>{data.updated_at}</span>
         </div>
       </div>
     </div>

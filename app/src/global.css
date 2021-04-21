@@ -34,3 +34,13 @@ html, body {
     justify-content: center;
     flex-direction: column;
 }
+
+a {
+    text-decoration: none;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+a:hover {
+    opacity: 0.6;
+}

@@ -1,5 +1,7 @@
 
 .repository-cards .repository-card {
+    width: 95%;
+    max-width: 700px;
     background-color: #FFFFFF;
     color: #000000;
     padding: 15px 20px;
@@ -7,7 +9,12 @@
     margin-top: 15px;
 }
 .repository-cards .repository-card:first-child {
-    margin-top: 0;
+    margin-top: 0px;
+}
+
+.repository-cards .repository-card > a {
+    font-weight: bold;
+    font-size: 1.8rem;
 }
 
 .repository-cards .repository-card p {

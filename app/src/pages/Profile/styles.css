@@ -8,10 +8,16 @@
     justify-content: center;
 }
 
+.profile .scroll-view {
+    overflow-y: scroll;
+    height: 420px;
+}
+
 .profile .repository-cards {
     margin-left: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 0px 10px;
 }

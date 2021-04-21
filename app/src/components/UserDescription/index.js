@@ -8,42 +8,42 @@ import Email from '../../assets/mail.svg';
 import Website from '../../assets/link.svg';
 import Twitter from '../../assets/twitter.svg';
 
-function UserDescription() {
+function UserDescription({data}) {
   return (
     <div className="user-description">
       <div className="user-image">
-        <img alt="User" />
+        <img alt="User" src={data.avatar_url} />
       </div>
       <div className="description-content">
-        <h1>Developer’s full name</h1>
-        <h2>@username</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum...</p>
+        <a href={data.html_url} target="_blank">{data.name}</a>
+        <h2>@{data.login}</h2>
+        <p>{data.bio}</p>
         <div className="user-status">
-          <span>200 followers</span>
-          <span>130 following</span>
+          <span>{data.followers} followers</span>
+          <span>{data.following} following</span>
           <span>100 stars</span>
         </div>
         <div className="user-extra-info">
           <div className="extra-info-item">
             <img alt="Organizational" src={Organizational} />
-            <span>Organizational</span>
+            <span>{data.company || 'No company'}</span>
           </div>
           <div className="extra-info-item">
             <img alt="Location" src={Location} />
-            <span>Location</span>
+            <span>{data.location || 'No location'}</span>
           </div>
           <div className="extra-info-item">
             <img alt="Email" src={Email} />
-            <span>Email</span>
+            <span>{data.email || 'No email'}</span>
           </div>
-          <div className="extra-info-item">
+          <a href={data.blog} target="_blank" className="extra-info-item">
             <img alt="Website" src={Website} />
-            <span>Website</span>
-          </div>
-          <div className="extra-info-item">
+            <span>{data.blog || 'No website'}</span>
+          </a>
+          <a href={data.twitter_username} target="_blank" className="extra-info-item">
             <img alt="Twitter" src={Twitter} />
-            <span>Twitter</span>
-          </div>
+            <span>{data.twitter_username || 'No twitter'}</span>
+          </a>
         </div>
       </div>
     </div>
