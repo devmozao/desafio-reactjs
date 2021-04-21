@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Desafio react-js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Decidi me reinventar e criar uma aplicação, com ajuda do desafio [devMozao](https://github.com/devMozao) criei um aplicativo que faz busca de usuários no git hub. Confira:
 
-## Available Scripts
 
-In the project directory, you can run:
+## Técnologias
 
-### `npm start`
+- React JS : Framework muito utilizada em aplicações web, foi a definida pelo desafio.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React Router DOM : Biblioteca utilizada nas rotas da aplicação.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- CSS : Linguagem para estilização, preferi não utilizar uma lib por ser um projeto simples e a maior liberdade.
 
-### `npm test`
+- Axios : Biblioteca para facilitar a integração com a api, utilizei por ser simples e facilitar a comunicação.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Estrutura
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- PUBLIC
+Arquivos públicos, o index.html que possui a definição padrão, além do icone e outros arquivos de configuração
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- SRC
+Todos os arquivos do código fonte, componentes, páginas e imagens.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ASSETS
+Arquivos de imagens, logos, icones.
 
-### `npm run eject`
+- COMPONENTS
+Componentes da aplicação que serão usados nas páginas para a renderização e facilitação na identificação no código.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- PAGES
+Páginas da aplicação (home e profile).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- SERVICES
+Arquivos de serviços, como o arquivo de configuração do Axios. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- index.js
+Arquivo de ínicio, acompanhado do global.css, com estilos globais.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Além disso todos os componentes e páginas são acompanhados de um arquivo de styles.css que define os estilos do determinado componente ou página.
 
-## Learn More
+## Design
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O Design da aplicação foi desenvolvido no figma e está disponível por meio [deste link](https://www.figma.com/file/LBCPyFyLVhNKgaDxtIY65C/Desafio-React-js?node-id=0%3A1).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Utilização
 
-### Code Splitting
+Obs: Para instalar as dependencias e utilizar o app você precisa do node versão 14 e npm versão 6. É recomendado o node v14.15.4 e npm v6.14.10.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Instalando dependências
 
-### Analyzing the Bundle Size
+Para instalar as dependências do projeto que incluem o react, axios, react-router-dom e outras, basta digitar o seguinte comando na pasta app desse repositório:
+`npm i`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Iniciando o aplicativo
 
-### Making a Progressive Web App
+Após instalar as dependências você pode iniar o aplicativo com o seguinte comando:
+`npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Isso iniciará o app em modo desenvolvedor, no [http://localhost:3000](http://localhost:3000) ou em uma outra porta caso esta já esteja sendo usada.
 
-### Advanced Configuration
+### Deploy
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Para colocar o app para produção basta executar o seguinte comando na pasta app, após instalar as depêndencias:
+`npm run build`
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Veja mais sobre no link: [deployment](https://facebook.github.io/create-react-app/docs/deployment).
