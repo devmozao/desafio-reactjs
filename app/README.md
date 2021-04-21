@@ -17,24 +17,31 @@ Decidi me reinventar e criar uma aplicação, com ajuda do desafio [devMozao](ht
 ## Estrutura
 
 - PUBLIC
+
 Arquivos públicos, o index.html que possui a definição padrão, além do icone e outros arquivos de configuração
 
 - SRC
+
 Todos os arquivos do código fonte, componentes, páginas e imagens.
 
 - ASSETS
+
 Arquivos de imagens, logos, icones.
 
 - COMPONENTS
+
 Componentes da aplicação que serão usados nas páginas para a renderização e facilitação na identificação no código.
 
 - PAGES
+
 Páginas da aplicação (home e profile).
 
 - SERVICES
+
 Arquivos de serviços, como o arquivo de configuração do Axios. 
 
 - index.js
+
 Arquivo de ínicio, acompanhado do global.css, com estilos globais.
 
 Além disso todos os componentes e páginas são acompanhados de um arquivo de styles.css que define os estilos do determinado componente ou página.
