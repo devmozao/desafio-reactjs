@@ -16,9 +16,13 @@ Dar um fork no projeto, clonar o repositório em sua máquina local e criar um b
 
 ## Histórias
 •	Ao entrar na home page, devo pesquisar o usuário pelo seu username do GitHub e ter os dados do usuário exibidos corretamente na página de perfil.  
+
 •	Na página de perfil, os repositórios devem ser ordenados com o seguinte critério: dos que tem mais estrelas, para os que tem menos estrelas.  
+
 •	Os nomes dos repositórios devem ser links que levam ao repositório original do GitHub, em uma página nova.  
+
 •	Caso o usuário pesquisado possua um site nas informações de seu perfil, o mesmo deve ser aberto em uma nova página. O mesmo deve acontecer caso o usuário pesquisado tenha uma conta no twitter em seu perfil.  
+
 •	O botão de voltar deve levar de volta para a home page, para que outro usuário do GitHub seja pesquisado.  
 
 
@@ -70,8 +74,11 @@ Dar um fork no projeto, clonar o repositório em sua máquina local e criar um b
 Para a entrega do desafio, faça o seguinte:
 
 •	Suba o código desenvolvido em seu github pessoal. [*Docs aqui*](https://docs.github.com/pt/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line)  
+
 •	Depois, vá até o [*este link*](https://github.com/devMozao/desafio-reactjs/issues/new) e crie uma issue. Nesta issue, deixe o link do seu repositório com o código do seu desafio, e coloque a tag de *code review* na issue. (cor laranja na tag)  
+
 •	Após isso, basta esperar. Vou entrar em contato contigo, e vamos marcar uma data pra fazer esse code review e uma sessão de feedback do que achamos do seu projeto.  
+
 •	Caso tenha dúvidas e esteja travado, basta abrir uma issue no mesmo link, com uma tag de *ajuda* (cor verde)  
 
 ## Observações importantes
