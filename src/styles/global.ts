@@ -2,30 +2,12 @@ import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 @font-face {
-  font-family: 'Poppins';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: local('Poppins Light'), local('Poppins-Light'),
-       url('/fonts/poppins-v15-latin-300.woff2') format('woff2');
-}
-/* poppins-regular - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Poppins Regular'), local('Poppins-Regular'),
-       url('/fonts/poppins-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-}
-/* poppins-600 - latin */
-@font-face {
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
-       url('/fonts/poppins-v15-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+  src: local('Lato Light'), local('Lato-Light'),
+       url('/fonts/lato.light.ttf');
 }
   * {
     margin: 0;
@@ -40,6 +22,7 @@ ${({ theme }) => css`
   }
   body {
     font-family: ${theme.font.family};
+    font-weight: ${theme.font.light};
     font-size: ${theme.font.sizes.medium};
   }
 `}
