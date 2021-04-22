@@ -67,6 +67,11 @@
     opacity: 0.7;
 }
 
+.home .error-message {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
 @media (max-width: 450px) {
     .home h1 {
         font-size: 5.2rem;
