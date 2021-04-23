@@ -11,10 +11,5 @@ export const Wrapper = styled.li`
       width: 2.5rem;
 
     }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
   `}
 `;

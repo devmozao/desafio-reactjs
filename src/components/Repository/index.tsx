@@ -8,17 +8,21 @@ export type RepositoryProps = {
   description?: string;
   stars: number;
   updateAt: string;
+  link: string;
 };
 const Repository = ({
   name,
   description = "This repository has no description.",
   stars,
   updateAt,
+  link,
 }: RepositoryProps) => (
   <S.Wrapper>
-    <S.Name>{name}</S.Name>
+    <S.Name href={link} target="_blank" rel="noReferrer">{name}</S.Name>
     <S.Description>{description}</S.Description>
-    <S.Numbers><StarIcon /> {stars} stars <DotFillIcon /> Updated {updateAt}</S.Numbers>
+    <S.Numbers>
+      <StarIcon /> {stars} stars <DotFillIcon /> Updated {updateAt}
+    </S.Numbers>
   </S.Wrapper>
 );
 

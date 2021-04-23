@@ -5,7 +5,8 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    width: 45rem;
+    min-width: 45rem;
+    max-width: 45rem;
     background-color: ${theme.colors.darkGray};
 
     padding: ${theme.spacings.small};
@@ -78,8 +79,13 @@ export const DevLinks = styled.ul`
       margin-top: 6rem;
       margin-bottom: 4rem;
 
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
       &&:hover{
-      opacity: 95%;
+      opacity: 80%;
       transition: opacity 200ms;
     }
   `}

@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.li``;
-export const Name = styled.h3`
+export const Name = styled.a`
   ${({ theme }) => css`
+    text-decoration:none;
     font-size: 2.4rem;
     color: ${theme.colors.darkGray};
     line-height: 3.4rem;

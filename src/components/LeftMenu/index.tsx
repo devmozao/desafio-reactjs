@@ -12,15 +12,17 @@ import { Mail as MailIcon } from "@styled-icons/octicons/Mail";
 import { Link as LinkIcon } from "@styled-icons/octicons/Link";
 
 import { Twitter as TwitterIcon } from "@styled-icons/feather/Twitter";
+import { Link } from "react-router-dom";
+import DevHeading from "components/DevHeading";
 
-type LeftMenuProps = {
+export type UserProps = {
   avatar: string;
   devName: string;
   devLogin: string;
   devBio?: string;
   followers: number;
   following: number;
-  stars: number;
+  stars?: number;
   organization?: string;
   location?: string;
   email?: string;
@@ -28,13 +30,13 @@ type LeftMenuProps = {
   twitter?: string;
 };
 
-const LeftMenu = ({ ...props }: LeftMenuProps) => (
+const LeftMenu = ({ ...props }: UserProps) => (
   <S.Wrapper>
     <S.Avatar src={props.avatar} />
     <S.DevInfo>
       <DevName>{props.devName}</DevName>
       <DevName isLogin={true}>@{props.devLogin}</DevName>
-      <S.DevBio>{props.devBio}</S.DevBio>
+      {!!props.devBio && <S.DevBio>{props.devBio}</S.DevBio>}
       <S.DevNumbers>
         <DevNumber icon={<PeopleIcon />}>{props.followers} followers</DevNumber>
         <DevNumber icon={<HeartIcon />}>{props.following} following</DevNumber>
@@ -43,20 +45,33 @@ const LeftMenu = ({ ...props }: LeftMenuProps) => (
     </S.DevInfo>
     <S.DevLinks>
       {!!props.organization && (
-        <DevLink icon={<OrganizationIcon />}>{props.organization}</DevLink>
+        <DevHeading icon={<OrganizationIcon />}>{props.organization}</DevHeading>
       )}
       {!!props.location && (
-        <DevLink icon={<LocationIcon />}>{props.location}</DevLink>
+        <DevHeading icon={<LocationIcon />}>{props.location}</DevHeading>
       )}
-      {!!props.email && <DevLink icon={<MailIcon />} href={"mailto:" + props.email}>{props.email}</DevLink>}
+      {!!props.email && (
+        <DevLink icon={<MailIcon />} href={"mailto:" + props.email}>
+          {props.email}
+        </DevLink>
+      )}
       {!!props.website && (
-        <DevLink icon={<LinkIcon />} href={props.website}>{props.website}</DevLink>
+        <DevLink icon={<LinkIcon />} href={props.website}>
+          {props.website}
+        </DevLink>
       )}
       {!!props.twitter && (
-        <DevLink icon={<TwitterIcon />} href={"https://twitter.com/" + props.twitter}>@{props.twitter}</DevLink>
+        <DevLink
+          icon={<TwitterIcon />}
+          href={"https://twitter.com/" + props.twitter}
+        >
+          @{props.twitter}
+        </DevLink>
       )}
     </S.DevLinks>
-    <S.BackButton>Back</S.BackButton>
+    <S.BackButton>
+      <Link to="/">Back</Link>
+    </S.BackButton>
   </S.Wrapper>
 );
 

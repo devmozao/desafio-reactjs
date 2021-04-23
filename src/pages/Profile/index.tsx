@@ -1,51 +1,89 @@
-import LeftMenu from "components/LeftMenu";
-import Repository from "components/Repository";
+import LeftMenu, { UserProps } from "components/LeftMenu";
+import Repository, { RepositoryProps } from "components/Repository";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { axios, RepoApiProps } from "services/axios";
+import { countStars, formatUpdatedAt, sortRepos } from "utils";
 import * as S from "./styles";
 
-const Profile = () => (
-  <S.Wrapper>
-    <LeftMenu
-      avatar = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAHlBMVEX09PTh4eH19fXg4ODk5OTw8PDs7Ozq6uru7u7n5+dZKxXMAAAELUlEQVR4nO2dWXKtMAwFwQMX9r/hB9RNMOARhCTyTv/kIxVQl4kHYZmuAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgAsZ03o9eA6OfwyH360bXWz30kyd2HHvbq8LaibQdJ2V+C7Yf6RSdQsEZOxApGqWCsyJNK5qPVsEZCsHOS1tksBNFI2rsZTY8gaG0QxaCRjRj0ITS4/wvW0judguaKbjaID1f+xLEZG8/psZtV6OeKF3GbH2DHW9fbDN0WgTn/j0wvBtVYEjSM9MAwxZgKAMMW4ChDLyGxoQ/eGA0NMYPk3O9c9PH80nyGZo1A/e9l3WEiZM8DxmeZm3GH/Ib1jFNXZna0AzntTFZcigPj2E8f2M/HIoshqkEFYsih+Fu7b9XZOhvWNow4bdw85YVMBjmkqg0Kb4sHG2YaUKaFF+W5w3zefDnO5vnR/wwPxXh8YwOw1Oaz4Pbmzct8ryhLxhe+EdsivRxw/RgePW2821a/uZ5w8ILt/auZp7Ct8Qqb9g6/17XKA3BKnhK227yswirjvZtPc22yqwN912jxW6bQGW87xrx93mCuoBfNWs7JkKqIuaYeWcf04brn3ey1ITMsXrK7F9oWD1Ft+pUxPyeFXB8L1I5aJYsRnKbTcM9E5utyleQzUTVz2eSu8mKYb8km5jbLleI+xUZ4cJ+wHzgr8jqFzY85iNnfPe0vJn5uVff8mamuKMzGzrn27Xu9+3a4Bu2JddsWc3Erv4NaeWe3HTw6t9yV246Tkev3bB6V3UyfOWGDdvGU/HrNmzbFx8X0GzYvPE/asA14l+hubIhqqC4DS+UbsQc9Bpeq005S2g1vFx8c7LQani5uuikIWhohnR5wI3yqaOHnOG8ZLQpxVv1YYd1p5jhuiZOKN4sgNsrShl+F/0xxfsVfjtFoRE/yGqcfkdQwhgqyrRhmLY5tiJJjWbwvkfEcJeXOjyoNEWoVrYND4m3UJGqyla2DU+ZxUCRqoxY1DCWOv3pbsjqpCUNo4LfVqQrBBc0jAquioaylF/OMCG4KlKW8j9vmBjxk4LUSLUhm6CUIZ+gkCGjoIwhp6CIIaughCGvoIAhsyC/Ibcg+4jPLsjdhvyCzIYCgryGEoK8hoV93u83lDn+i9VQ4iGFIQwrDN2fN/z7bQhDGMIQhjCEYdnwvxrxPyKnljIadn6QgNOwMxKwGgoDwxZgKAMMW4ChDE/N2kiCoyA4eYTgPO/t/PPluyc6COrICc5kDybZ1jodhPP+u4LFg1qkofjXyR9jIgzFaaKl84Rkoen9FDci1Tmb0h5JqM6gNFo7m2R5zgVFbd8kW5nHZzJOx0MowNqhHHiL4+h2H7ARZvl4HvUHAtfD1yfpycyX6TPSfwCxE8o+JXhADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAs/ANyGFT0fw3sTAAAAABJRU5ErkJggg=="
-      devLogin = "username"
-      devName = "Developer's full name"
-      followers= {200}
-      following = {130}
-      stars = {100}
-      devBio = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat."
-      email = "email"
-      location = "location"
-      organization = "organization"
-      twitter = "myTwitter"
-      website = "www.mywebsite.com"
-    />
-    <S.RepositoryList>
-      <Repository
-        name="Repository Name"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat."
-        stars={100}
-        updateAt="30 days ago"
-      />
-      <Repository
-        name="Repository Name"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat."
-        stars={100}
-        updateAt="30 days ago"
-      />
-      <Repository
-        name="Repository Name"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat."
-        stars={100}
-        updateAt="30 days ago"
-      />
-      <Repository
-        name="Repository Name"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt congue ligula in rutrum. Morbi nec lacus condimentum, hendrerit mi eu, feugiat."
-        stars={100}
-        updateAt="30 days ago"
-      />
+const Profile = () => {
+  const { username } = useParams<{ username: string }>();
 
-    </S.RepositoryList>
-  </S.Wrapper>
-);
+  const [userData, setUserData] = useState<UserProps>({
+    avatar: "",
+    devLogin: "",
+    devName: "",
+    followers: 0,
+    following: 0,
+  });
+  const [repositories, setRepositories] = useState<RepositoryProps[]>([]);
+
+  const findUserData = async (username: string) => {
+    await axios
+      .get(`/users/${username}`)
+      .then(({ data }) => {
+        const user: UserProps = {
+          avatar: data.avatar_url,
+          devLogin: data.login,
+          devName: data.name,
+          followers: data.followers,
+          following: data.following,
+          devBio: data.bio,
+          email: data.email,
+          location: data.location,
+          organization: data.company,
+          twitter: data.twitter_username,
+          website: data.blog,
+        };
+
+        setUserData(user);
+      })
+      .catch(() => null);
+  };
+
+  const findRepositories = async (username: string) => {
+    await axios
+      .get(`/users/${username}/repos`)
+      .then(({ data }) => {
+        data.forEach((repo: RepoApiProps) => {
+          const updateAt = formatUpdatedAt(repo.updated_at);
+          const repository = {
+            name: repo.name,
+            stars: repo.stargazers_count,
+            updateAt,
+            description: repo.description,
+            link: repo.html_url,
+          };
+
+          setRepositories((repositories) => [...repositories, repository]);
+        });
+      })
+      .catch(() => null);
+  };
+
+  useEffect(() => {
+    findRepositories(username);
+    findUserData(username);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    setUserData({ ...userData, stars: countStars(repositories) });
+    setRepositories(repositories => sortRepos(repositories));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [repositories]);
+
+  return (
+    <S.Wrapper>
+      <LeftMenu {...userData} />
+      <S.RepositoryList>
+        {!!repositories &&
+          repositories.map((repository, index) => {
+            return <Repository key={index} {...repository} />;
+          })}
+      </S.RepositoryList>
+    </S.Wrapper>
+  );
+};
 
 export default Profile;
