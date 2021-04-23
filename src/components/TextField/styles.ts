@@ -4,13 +4,12 @@ export const Wrapper = styled.input`
   ${({theme})=>css`
     width:40rem;
     height:5rem;
-    padding: ${theme.spacings.small};
-    margin-right: ${theme.spacings.xxsmall};
+    padding: 2.3rem;
 
     font-family: ${theme.font.family};
     color: ${theme.colors.black};
     font-style: italic;
-    font-size: ${theme.font.sizes.large};
+    font-size: 1.8rem;
 
     border-color: ${theme.colors.darkGray};
     border-radius: ${theme.border.radius};

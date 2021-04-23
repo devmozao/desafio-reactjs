@@ -23,11 +23,11 @@ export default {
     }
   },
   colors: {
-    white: 'rgb(250, 250, 250)',
-    black: 'rgb(59, 66, 82)',
-    lightGray: 'rgb(236, 239, 244)',
-    gray: 'rgb(129, 144, 165)',
-    darkGray: 'rgb(71, 82, 94)'
+    white: '#FAFAFA',
+    black: '#3B4252',
+    lightGray: '#ECEFF4',
+    gray: '#8190A5',
+    darkGray: '#3B4252'
   },
   spacings: {
     xxsmall: '0.8rem',

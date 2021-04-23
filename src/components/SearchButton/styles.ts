@@ -13,14 +13,15 @@ export const Wrapper = styled.button`
 
     font-family: ${theme.font.family};
     font-weight: ${theme.font.light};
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-style: italic;
 
     width: 12rem;
     height: 5rem;
 
-    span {
-      margin-left: ${theme.spacings.xxsmall};
+    svg {
+      margin-right: 0.5rem;
+      width: 3rem;
     }
 
     &&:hover{

@@ -8,10 +8,7 @@ export const Wrapper = styled.main`
     align-items: center;
     justify-content: center;
     background-color: ${theme.colors.white};
-    height: 100vh;
-
-
-
+    min-height: 100vh;
   `}
 
 `

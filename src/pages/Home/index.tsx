@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import TextField from "components/TextField";
-import Button from "components/Button";
+import SearchButton from "components/SearchButton";
 import Title from "components/Title";
 
 const Home = () => (
@@ -8,7 +8,7 @@ const Home = () => (
     <Title />
     <S.SearchItems>
       <TextField />
-      <Button />
+      <SearchButton />
     </S.SearchItems>
   </S.Wrapper>
 );
