@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
 export const Wrapper = styled.li`
   ${({ theme }) => css`
     color: ${theme.colors.lightGray};
-    font-size: 2rem;
+    font-size: ${theme.font.sizes.xlarge};
     font-style: italic;
     line-height: 3.4rem;
 
@@ -16,5 +17,9 @@ export const Wrapper = styled.li`
       text-decoration: none;
       color: inherit;
     }
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.medium};
+    `}
   `}
 `;

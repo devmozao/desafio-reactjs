@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
@@ -6,10 +7,14 @@ export const Wrapper = styled.div`
     flex-direction: column;
     min-height: 100vh;
     min-width: 45rem;
-    max-width: 45rem;
     background-color: ${theme.colors.darkGray};
 
     padding: ${theme.spacings.small};
+
+    ${media.lessThan('medium')`
+      width:100%;
+      min-width: 0rem;
+    `}
   `}
 `;
 
@@ -17,23 +22,31 @@ export const Avatar = styled.img`
   ${({ theme }) => css`
     width: 100%;
     max-width: 30rem;
-    margin-top: 6rem;
+    margin-top: ${theme.spacings.xxlarge};
     align-self: center;
+
+    ${media.lessThan('medium')`
+      margin-top: ${theme.spacings.medium};
+    `}
   `}
 `;
 
 export const DevInfo = styled.div`
   ${({ theme }) => css`
-    margin-top: 3.3rem;
+    margin-top: ${theme.spacings.medium};
   `}
 `;
 
 export const DevBio = styled.p`
   ${({ theme }) => css`
-    margin-top: 2.3rem;
+    margin-top: ${theme.spacings.small};
     color: ${theme.colors.gray};
-    font-size: 1.8rem;
+    font-size: ${theme.font.sizes.large};
     line-height: 2.8rem;
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.small};
+    `}
 
   `}
 `;
@@ -43,9 +56,13 @@ export const DevNumbers = styled.ul`
     list-style: none;
 
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
-    margin-top: 2.3rem;
+    margin-top: ${theme.spacings.small};
+
+    ${media.lessThan("medium")`
+
+    `}
 
   `}
 `;
@@ -57,10 +74,10 @@ export const DevLinks = styled.ul`
     display:flex;
     flex-direction:column;
 
-    margin-top: 3.8rem;
+    margin-top: ${theme.spacings.large};
 
     li {
-      margin-bottom: 1.7rem;
+      margin-bottom: ${theme.spacings.xsmall};
     }
 
   `}`
@@ -74,10 +91,10 @@ export const DevLinks = styled.ul`
       border-radius: ${theme.border.radius};
       align-self: center;
       padding: 1.2rem;
-      font-size: 1.8rem;
+      font-size: ${theme.font.sizes.large};
       font-style:italic;
-      margin-top: 6rem;
-      margin-bottom: 4rem;
+      margin-top: ${theme.spacings.xxlarge};
+      margin-bottom: ${theme.spacings.large};
 
       a {
         text-decoration: none;
@@ -88,6 +105,10 @@ export const DevLinks = styled.ul`
       opacity: 80%;
       transition: opacity 200ms;
     }
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.small};
+    `}
   `}
   `
 

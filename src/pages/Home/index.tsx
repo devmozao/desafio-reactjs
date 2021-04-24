@@ -8,12 +8,13 @@ import { useHistory } from "react-router-dom";
 
 const Home = () => {
   const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
   const history = useHistory();
 
   const handleSearch = () => {
     axios.get(`/users/${username}`).then(()=>{
       history.push(`/profile/${username}`)
-    })
+    }).catch(()=> setError("User not found!"))
 
   };
 
@@ -24,6 +25,7 @@ const Home = () => {
         <TextField onChange={(e) => setUsername(e.target.value)} />
         <SearchButton onClick={handleSearch} />
       </S.SearchItems>
+      {!!error && (<S.Error>{error}</S.Error>)}
     </S.Wrapper>
   );
 };

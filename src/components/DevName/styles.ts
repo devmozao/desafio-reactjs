@@ -1,10 +1,15 @@
-import styled, {css} from 'styled-components'
+import styled, {css, DefaultTheme} from 'styled-components'
+import media from 'styled-media-query'
 import { DevNameProps } from '.'
 
 const wrapperModifers = {
-  login: ()=>css`
-  font-size: 2.8rem;
+  login: (theme:DefaultTheme)=>css`
+  font-size: ${theme.font.sizes.xxlarge};
   line-height: 3.4rem;
+
+  ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.large};
+    `}
   `
 }
 
@@ -19,6 +24,10 @@ export const Wrapper = styled.h2<DevNameProps>`
 
     line-height: 5rem;
 
-    ${!!isLogin && wrapperModifers.login()}
+    ${!!isLogin && wrapperModifers.login(theme)}
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.xxlarge};
+    `}
   `}
 `

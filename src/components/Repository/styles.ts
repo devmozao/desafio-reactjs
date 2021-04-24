@@ -1,36 +1,53 @@
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
-export const Wrapper = styled.li``;
+export const Wrapper = styled.li`
+  ${media.lessThan('medium')`
+    width: 100%;
+  `}
+`;
 export const Name = styled.a`
   ${({ theme }) => css`
     text-decoration:none;
-    font-size: 2.4rem;
+    font-size: ${theme.font.sizes.xxlarge};
     color: ${theme.colors.darkGray};
     line-height: 3.4rem;
     font-style: italic;
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.large};
+    `}
   `}
 `;
 export const Description = styled.p`
   ${({ theme }) => css`
-    font-size: 1.8rem;
+    font-size: ${theme.font.sizes.large};
     color: ${theme.colors.darkGray};
     line-height: 2.8rem;
-    margin-top: 0.4rem;
+    margin-top: ${theme.spacings.xxsmall};
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.small};
+    `}
   `}
 `;
 export const Numbers = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: ${theme.font.sizes.xlarge};
     color: ${theme.colors.gray};
     font-style: italic;
+    margin-top: ${theme.spacings.xsmall};
 
-    margin-top: 1rem;
     svg{
       width: 3rem;
-      margin: 0.4rem;
+      margin: ${theme.spacings.xxsmall};
     }
+
+    ${media.lessThan("medium")`
+      font-size: ${theme.font.sizes.medium};
+    `}
 
   `}
 `;
