@@ -1,46 +1,70 @@
-# Getting Started with Create React App
+<h1 align="center">
+   Search Devs
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  Search Devs is an application where you can get precious info and list all repositories of a Github user ordered by ⭐(stars)!
+</p>
 
-## Available Scripts
+<hr />
 
-In the project directory, you can run:
+<p align="center">In this project, I practiced very important concepts from ReactJS, like React Router, React Hooks, React Components, Typescript, Axios, Styled Components and more.
+</p>
 
-### `yarn start`
+<div align="center">
+  <sub> Made with 💖 by
+    <a href="https://github.com/guilhpupo">Guilherme Pupo
+  </sub>
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# 📌 Contents
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [Screenshots](#camera-screenshots)
+* [Technologies](#rocket-technologies)
+* [How to Run](#computer-how-to-run)
+* [Commands](#sparkles-commands)
+* [Issues](#bug-issues)
+* [License](#page_facing_up-license)
 
-### `yarn test`
+# :camera: Screenshots
+<div align="center" display="flex">
+   <img src="./public/img/home.png" width="400px">
+   <img src="./public/img/profile.png" width="400px">
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# :rocket: Technologies
+This project was made using the follow technologies:
 
-### `yarn build`
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [React Router](https://reactrouter.com/)
+- [Styled Components](https://styled-components.com/)
+- [Styled Icons](https://styled-icons.js.org/)
+- [Axios](https://github.com/axios/axios)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# :computer: How to run
 
-### `yarn eject`
+```bash
+# Clone Repository
+$ git clone https://github.com/guilhpupo/desafio-reactjs.git && cd desafio-reactjs
+# Install Dependencies
+$ yarn install
+# Run Aplication
+$ yarn start
+```
+Go to http://localhost:3000/ to see the application running.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# :sparkles: Commands
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `start`: runs your application on `localhost:3000`
+- `build`: creates the production build version
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# :bug: Issues
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Create a <a href="https://github.com/guilhpupo/desafio-reactjs/issues">new issue report</a>, it will be an honor to be able to help you solve and further improve our application.
+# :page_facing_up: License
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is under the [MIT License](./LICENSE) |
+Made with 💖 by [Guilherme Pupo](https://www.linkedin.com/in/guilhpupo/).
