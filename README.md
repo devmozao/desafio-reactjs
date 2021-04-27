@@ -60,6 +60,7 @@ Go to http://localhost:3000/ to see the application running.
 
 - `start`: runs your application on `localhost:3000`
 - `build`: creates the production build version
+- `lint`: runs the linter in all components and pages
 
 # :bug: Issues
 

@@ -28,7 +28,6 @@ export const findRepositories = async (username: string) => {
         repositories.push(repository)
       });
     })
-    .catch(() => null);
 
   return repositories;
 };

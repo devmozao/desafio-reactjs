@@ -2,10 +2,17 @@ import { UserProps } from "components/LeftMenu";
 import { axios } from "./axios";
 
 export const findUserData = async (username: string) => {
+  let user: UserProps = {
+    avatar: "",
+    devLogin: "",
+    devName: "",
+    followers: 0,
+    following: 0,
+  }
   await axios
     .get(`/users/${username}`)
     .then(({ data }) => {
-      const user: UserProps = {
+      user = {
         avatar: data.avatar_url,
         devLogin: data.login,
         devName: data.name,
@@ -19,7 +26,7 @@ export const findUserData = async (username: string) => {
         website: data.blog,
       };
 
-      return user;
+
     })
-    .catch(() => null);
+    return user;
 };

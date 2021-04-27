@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { findRepositories } from "services/RepositoryService";
 import { findUserData } from "services/UserService";
-import { countStars, formatUpdatedAt, sortRepos } from "utils";
+import { countStars, sortRepos } from "utils";
 import * as S from "./styles";
 
 const Profile = () => {
@@ -20,12 +20,12 @@ const Profile = () => {
   const [repositories, setRepositories] = useState<RepositoryProps[]>([]);
 
   useEffect(() => {
-    findRepositories(username).catch(({data})=>
-      setRepositories((repositories) => [...repositories, data])
-    )
-    findUserData(username).catch(({data})=>
-      setUserData(data)
-    );
+    findRepositories(username).then((repoList) => {
+      repoList.forEach((repo: RepositoryProps) =>
+        setRepositories((repositories) => [...repositories, repo])
+      );
+    });
+    findUserData(username).then((user) => setUserData(user));
   }, []);
 
   useEffect(() => {
