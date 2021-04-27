@@ -4,10 +4,4 @@ export const axios = Axios.create({
 
 });
 
-export type RepoApiProps = {
-  name: string;
-  stargazers_count: number;
-  updated_at: string;
-  description: string;
-  html_url: string
-};
+

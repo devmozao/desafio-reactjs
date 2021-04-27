@@ -70,7 +70,7 @@ const LeftMenu = ({ ...props }: UserProps) => (
       )}
     </S.DevLinks>
     <S.BackButton>
-      <Link to="/">Back</Link>
+      <Link to="/">Voltar</Link>
     </S.BackButton>
   </S.Wrapper>
 );

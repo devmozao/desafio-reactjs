@@ -22,7 +22,9 @@ export default {
     white: '#FAFAFA',
     lightGray: '#ECEFF4',
     gray: '#8190A5',
-    darkGray: '#3B4252'
+    secondaryGray: '#47525E',
+    darkGray: '#3B4252',
+
   },
   spacings: {
     xxsmall: '0.3rem',

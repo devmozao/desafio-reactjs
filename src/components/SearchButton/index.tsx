@@ -8,7 +8,7 @@ type SearchButtonProps = {
 const SearchButton = ({ onClick }: SearchButtonProps) => (
   <S.Wrapper onClick={onClick}>
     <SearchIcon />
-    <span>Search</span>
+    <span>Buscar</span>
   </S.Wrapper>
 );
 

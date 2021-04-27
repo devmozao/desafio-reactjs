@@ -1,14 +1,8 @@
-import { createGlobalStyle, css } from 'styled-components'
+import { createGlobalStyle, css } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@font-face {
-  font-family: 'Lato';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: local('Lato Light'), local('Lato-Light'),
-       url('/fonts/lato.light.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,300&display=swap');
+
   * {
     margin: 0;
     padding: 0;
@@ -26,6 +20,6 @@ ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
   }
 `}
-`
+`;
 
-export default GlobalStyles
+export default GlobalStyles;

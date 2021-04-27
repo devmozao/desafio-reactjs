@@ -9,9 +9,14 @@ export const Wrapper = styled.li`
       font-size: ${theme.font.sizes.xlarge};
       font-style:italic;
 
+
       svg {
-        width: 2rem;
-        margin-right: ${theme.spacings.xxsmall};
+        width: 2.5rem;
+        margin: ${theme.spacings.xxsmall};
+      }
+
+      span {
+        margin: ${theme.spacings.xxsmall};
       }
 
       ${media.lessThan("medium")`

@@ -2,7 +2,8 @@ import LeftMenu, { UserProps } from "components/LeftMenu";
 import Repository, { RepositoryProps } from "components/Repository";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { axios, RepoApiProps } from "services/axios";
+import { findRepositories } from "services/RepositoryService";
+import { findUserData } from "services/UserService";
 import { countStars, formatUpdatedAt, sortRepos } from "utils";
 import * as S from "./styles";
 
@@ -18,59 +19,18 @@ const Profile = () => {
   });
   const [repositories, setRepositories] = useState<RepositoryProps[]>([]);
 
-  const findUserData = async (username: string) => {
-    await axios
-      .get(`/users/${username}`)
-      .then(({ data }) => {
-        const user: UserProps = {
-          avatar: data.avatar_url,
-          devLogin: data.login,
-          devName: data.name,
-          followers: data.followers,
-          following: data.following,
-          devBio: data.bio,
-          email: data.email,
-          location: data.location,
-          organization: data.company,
-          twitter: data.twitter_username,
-          website: data.blog,
-        };
-
-        setUserData(user);
-      })
-      .catch(() => null);
-  };
-
-  const findRepositories = async (username: string) => {
-    await axios
-      .get(`/users/${username}/repos`)
-      .then(({ data }) => {
-        data.forEach((repo: RepoApiProps) => {
-          const updateAt = formatUpdatedAt(repo.updated_at);
-          const repository = {
-            name: repo.name,
-            stars: repo.stargazers_count,
-            updateAt,
-            description: repo.description,
-            link: repo.html_url,
-          };
-
-          setRepositories((repositories) => [...repositories, repository]);
-        });
-      })
-      .catch(() => null);
-  };
-
   useEffect(() => {
-    findRepositories(username);
-    findUserData(username);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    findRepositories(username).catch(({data})=>
+      setRepositories((repositories) => [...repositories, data])
+    )
+    findUserData(username).catch(({data})=>
+      setUserData(data)
+    );
   }, []);
 
   useEffect(() => {
     setUserData({ ...userData, stars: countStars(repositories) });
-    setRepositories(repositories => sortRepos(repositories));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setRepositories((repositories) => sortRepos(repositories));
   }, [repositories]);
 
   return (

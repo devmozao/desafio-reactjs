@@ -56,7 +56,8 @@ export const DevNumbers = styled.ul`
     list-style: none;
 
     display:flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+
 
     margin-top: ${theme.spacings.small};
 
@@ -87,6 +88,7 @@ export const DevLinks = styled.ul`
       height: 5rem;
       width: 19rem;
       background-color: ${theme.colors.lightGray};
+      color: ${theme.colors.darkGray};
       border: none;
       border-radius: ${theme.border.radius};
       align-self: center;

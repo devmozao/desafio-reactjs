@@ -4,11 +4,12 @@ import media from "styled-media-query";
 export const Wrapper = styled.button`
   ${({ theme }) => css`
     display: flex;
+    justify-content: center;
     align-items: center;
     border: none;
     border-radius: ${theme.border.radius};
     color: ${theme.colors.lightGray};
-    background-color: ${theme.colors.darkGray};
+    background-color: ${theme.colors.secondaryGray};
 
     padding: ${theme.spacings.xxsmall};
 
