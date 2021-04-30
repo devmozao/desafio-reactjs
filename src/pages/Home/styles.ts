@@ -12,7 +12,7 @@ export const Wrapper = styled.main`
   `}
 `;
 
-export const SearchItems = styled.div`
+export const SearchItems = styled.form`
   display: flex;
 
   ${media.lessThan("medium")`
