@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 
     padding: ${theme.spacings.small};
 
-    ${media.lessThan('medium')`
+    ${media.lessThan("medium")`
       width:100%;
       min-width: 0rem;
     `}
@@ -25,7 +25,7 @@ export const Avatar = styled.img`
     margin-top: ${theme.spacings.xxlarge};
     align-self: center;
 
-    ${media.lessThan('medium')`
+    ${media.lessThan("medium")`
       margin-top: ${theme.spacings.medium};
     `}
   `}
@@ -47,7 +47,6 @@ export const DevBio = styled.p`
     ${media.lessThan("medium")`
       font-size: ${theme.font.sizes.small};
     `}
-
   `}
 `;
 
@@ -55,55 +54,53 @@ export const DevNumbers = styled.ul`
   ${({ theme }) => css`
     list-style: none;
 
-    display:flex;
+    display: flex;
     justify-content: space-between;
-
 
     margin-top: ${theme.spacings.small};
 
     ${media.lessThan("medium")`
 
     `}
-
   `}
 `;
 
 export const DevLinks = styled.ul`
- ${({ theme }) => css`
+  ${({ theme }) => css`
     list-style: none;
 
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
 
     margin-top: ${theme.spacings.large};
 
     li {
       margin-bottom: ${theme.spacings.xsmall};
     }
+  `}
+`;
 
-  `}`
+export const BackSection = styled.div`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.xxlarge};
+    margin-bottom: ${theme.spacings.large};
+    align-self: center;
+  `}
+`;
 
-  export const BackButton = styled.button`
-  ${({theme})=>css`
-      height: 5rem;
-      width: 19rem;
-      background-color: ${theme.colors.lightGray};
-      color: ${theme.colors.darkGray};
-      border: none;
-      border-radius: ${theme.border.radius};
-      align-self: center;
-      padding: 1.2rem;
-      font-size: ${theme.font.sizes.large};
-      font-style:italic;
-      margin-top: ${theme.spacings.xxlarge};
-      margin-bottom: ${theme.spacings.large};
+export const BackButton = styled.button`
+  ${({ theme }) => css`
+    height: 5rem;
+    width: 19rem;
+    background-color: ${theme.colors.lightGray};
+    color: ${theme.colors.darkGray};
+    border: none;
+    border-radius: ${theme.border.radius};
+    padding: 1.2rem;
+    font-size: ${theme.font.sizes.large};
+    font-style: italic;
 
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      &&:hover{
+    &&:hover {
       opacity: 80%;
       transition: opacity 200ms;
     }
@@ -112,6 +109,4 @@ export const DevLinks = styled.ul`
       font-size: ${theme.font.sizes.small};
     `}
   `}
-  `
-
-
+`;

@@ -45,7 +45,9 @@ const LeftMenu = ({ ...props }: UserProps) => (
     </S.DevInfo>
     <S.DevLinks>
       {!!props.organization && (
-        <DevHeading icon={<OrganizationIcon />}>{props.organization}</DevHeading>
+        <DevHeading icon={<OrganizationIcon />}>
+          {props.organization}
+        </DevHeading>
       )}
       {!!props.location && (
         <DevHeading icon={<LocationIcon />}>{props.location}</DevHeading>
@@ -69,9 +71,12 @@ const LeftMenu = ({ ...props }: UserProps) => (
         </DevLink>
       )}
     </S.DevLinks>
-    <S.BackButton>
-      <Link to="/">Voltar</Link>
-    </S.BackButton>
+
+    <S.BackSection>
+      <Link to="/">
+        <S.BackButton>Voltar</S.BackButton>
+      </Link>
+    </S.BackSection>
   </S.Wrapper>
 );
 
