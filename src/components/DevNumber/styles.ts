@@ -6,13 +6,12 @@ export const Wrapper = styled.li`
       display: flex;
       align-items: center;
       color: ${theme.colors.lightGray};
-      font-size: ${theme.font.sizes.xlarge};
+      font-size: ${theme.font.sizes.xsmall};
       font-style:italic;
 
 
       svg {
-        width: 2.5rem;
-        margin: ${theme.spacings.xxsmall};
+        width: ${theme.font.sizes.small};
       }
 
       span {

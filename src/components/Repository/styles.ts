@@ -9,7 +9,7 @@ export const Wrapper = styled.li`
 export const Name = styled.a`
   ${({ theme }) => css`
     text-decoration:none;
-    font-size: ${theme.font.sizes.xxlarge};
+    font-size: ${theme.font.sizes.xlarge};
     color: ${theme.colors.darkGray};
     line-height: 3.4rem;
     font-style: italic;
@@ -21,7 +21,7 @@ export const Name = styled.a`
 `;
 export const Description = styled.p`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.large};
+    font-size: ${theme.font.sizes.small};
     color: ${theme.colors.darkGray};
     line-height: 2.8rem;
     margin-top: ${theme.spacings.xxsmall};
@@ -35,13 +35,13 @@ export const Numbers = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    font-size: ${theme.font.sizes.xlarge};
+    font-size: ${theme.font.sizes.medium};
     color: ${theme.colors.gray};
     font-style: italic;
     margin-top: ${theme.spacings.xsmall};
 
     svg{
-      width: 3rem;
+      width: 2rem;
       margin: ${theme.spacings.xxsmall};
     }
 

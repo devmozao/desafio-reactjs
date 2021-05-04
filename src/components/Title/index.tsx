@@ -1,9 +1,9 @@
-import * as S from './styles'
+import { Wrapper } from "./styles";
 
 const Title = () => (
-  <S.Wrapper>
+  <Wrapper>
     Search Devs
-  </S.Wrapper>
+  </Wrapper>
 )
 
 export default Title

@@ -17,6 +17,20 @@ ${({ theme }) => css`
     font-weight: ${theme.font.light};
     font-size: ${theme.font.sizes.medium};
   }
+
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${theme.colors.darkGray};
+    border-radius: 1rem;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${theme.colors.secondaryGray};
+  }
 `}
 `;
 

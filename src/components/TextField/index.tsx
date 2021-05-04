@@ -1,14 +1,14 @@
-import * as S from "./styles";
+import { Wrapper } from "./styles";
 
 export type TextFieldProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TextField = ({ onChange }: TextFieldProps) => (
-  <S.Wrapper
+  <Wrapper
     placeholder="Type the username here..."
     onChange={onChange}
-  ></S.Wrapper>
+  ></Wrapper>
 );
 
 export default TextField;

@@ -1,15 +1,16 @@
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import LeftMenu, { UserProps } from "components/LeftMenu";
 import Repository, { RepositoryProps } from "components/Repository";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+
 import { findRepositories } from "services/RepositoryService";
 import { findUserData } from "services/UserService";
 import { countStars, sortRepos } from "utils";
-import * as S from "./styles";
+
+import { Wrapper, RepositoriesSection, RepositoriesList } from "./styles";
 
 const Profile = () => {
-  const { username } = useParams<{ username: string }>();
-
   const [userData, setUserData] = useState<UserProps>({
     avatar: "",
     devLogin: "",
@@ -18,31 +19,54 @@ const Profile = () => {
     following: 0,
   });
   const [repositories, setRepositories] = useState<RepositoryProps[]>([]);
+  const [repositoriesError, setRepositoriesError] = useState<string>();
+
+  const { username } = useParams<{ username: string }>();
 
   useEffect(() => {
-    findRepositories(username).then((repoList) => {
-      repoList.forEach((repo: RepositoryProps) =>
-        setRepositories((repositories) => [...repositories, repo])
-      );
-    });
-    findUserData(username).then((user) => setUserData(user));
-  }, []);
+    async function handleRepositories() {
+      try {
+        let repositoriesList = await findRepositories(username);
+
+        repositoriesList = sortRepos(repositoriesList);
+        repositoriesList.forEach((repo: RepositoryProps) =>
+          setRepositories((repositories) => [...repositories, repo])
+        );
+      } catch (error) {
+        setRepositoriesError(error.message);
+      }
+    }
+    handleRepositories();
+  }, [username]);
 
   useEffect(() => {
-    setUserData({ ...userData, stars: countStars(repositories) });
-    setRepositories((repositories) => sortRepos(repositories));
-  }, [repositories]);
+    async function handleUserData() {
+      try {
+        const user = await findUserData(username);
+        const stars = countStars(repositories);
+        setUserData({ ...user, stars });
+      } catch (error) {
+        setUserData(error);
+      }
+    }
+    handleUserData();
+  }, [repositories, username]);
 
   return (
-    <S.Wrapper>
+    <Wrapper>
       <LeftMenu {...userData} />
-      <S.RepositoryList>
-        {!!repositories &&
-          repositories.map((repository, index) => {
-            return <Repository key={index} {...repository} />;
-          })}
-      </S.RepositoryList>
-    </S.Wrapper>
+
+      <RepositoriesSection>
+        {!!repositoriesError && <p>{repositoriesError}</p>}
+        {!!repositories && (
+          <RepositoriesList>
+            {repositories.map((repository, index) => (
+              <Repository key={index} {...repository} />
+            ))}
+          </RepositoriesList>
+        )}
+      </RepositoriesSection>
+    </Wrapper>
   );
 };
 

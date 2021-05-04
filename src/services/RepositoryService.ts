@@ -10,24 +10,40 @@ export type RepoApiProps = {
   html_url: string;
 };
 
+class EmptyRepositoryError extends Error {
+  constructor() {
+    super();
+    this.name = "EmptyRepositoryError";
+  }
+}
+
 export const findRepositories = async (username: string) => {
-  const repositories: RepositoryProps[] = [];
+  try {
+    const repositories: RepositoryProps[] = [];
 
-  await axios
-    .get(`/users/${username}/repos`)
-    .then(({ data }) => {
-      data.forEach((repo: RepoApiProps) => {
-        const updateAt = formatUpdatedAt(repo.updated_at);
-        const repository: RepositoryProps = {
-          name: repo.name,
-          stars: repo.stargazers_count,
-          updateAt,
-          description: repo.description,
-          link: repo.html_url,
-        };
-        repositories.push(repository)
-      });
-    })
+    const { data } = await axios.get(`/users/${username}/repos`);
 
-  return repositories;
+    if (data.length == 0) throw new EmptyRepositoryError();
+
+    data.forEach((repo: RepoApiProps) => {
+      const updateAt = formatUpdatedAt(repo.updated_at);
+      const repository: RepositoryProps = {
+        name: repo.name,
+        stars: repo.stargazers_count,
+        updateAt,
+        description: repo.description,
+        link: repo.html_url,
+      };
+      repositories.push(repository);
+    });
+
+    return repositories;
+  } catch (error) {
+    if (error instanceof EmptyRepositoryError)
+      throw new Error("User doesn't have any public repository.");
+    else
+      throw new Error(
+        "Oops! Repositories couldn't be loaded. Try again later."
+      );
+  }
 };

@@ -1,7 +1,9 @@
-import * as S from "./styles";
+import { Wrapper, Name, Description, Numbers } from "./styles";
 
-import { Star as StarIcon } from "@styled-icons/octicons/Star";
-import { DotFill as DotFillIcon } from "@styled-icons/octicons/DotFill";
+import {
+  Star as StarIcon,
+  DotFill as DotFillIcon,
+} from "@styled-icons/octicons";
 
 export type RepositoryProps = {
   name: string;
@@ -17,13 +19,15 @@ const Repository = ({
   updateAt,
   link,
 }: RepositoryProps) => (
-  <S.Wrapper>
-    <S.Name href={link} target="_blank" rel="noReferrer">{name}</S.Name>
-    <S.Description>{description}</S.Description>
-    <S.Numbers>
+  <Wrapper>
+    <Name href={link} target="_blank" rel="noReferrer">
+      {name}
+    </Name>
+    <Description>{description}</Description>
+    <Numbers>
       <StarIcon /> {stars} stars <DotFillIcon /> Updated {updateAt}
-    </S.Numbers>
-  </S.Wrapper>
+    </Numbers>
+  </Wrapper>
 );
 
 export default Repository;

@@ -5,11 +5,15 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    min-width: 45rem;
+    justify-content: space-between;
+    height: 100vh;
+    width: 37.5rem;
+    overflow-y: auto;
     background-color: ${theme.colors.darkGray};
 
     padding: ${theme.spacings.small};
+
+
 
     ${media.lessThan("medium")`
       width:100%;
@@ -18,95 +22,70 @@ export const Wrapper = styled.div`
   `}
 `;
 
-export const Avatar = styled.img`
+export const InfoSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+export const AvatarSection = styled.article`
   ${({ theme }) => css`
-    width: 100%;
-    max-width: 30rem;
-    margin-top: ${theme.spacings.xxlarge};
     align-self: center;
-
-    ${media.lessThan("medium")`
-      margin-top: ${theme.spacings.medium};
-    `}
+    margin-bottom: ${theme.spacings.xsmall};
   `}
 `;
+export const Avatar = styled.img`
+  width: 100%;
+  max-width: 20rem;
+`;
 
-export const DevInfo = styled.div`
+export const NameSection = styled.article`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.medium};
+    margin-bottom: ${theme.spacings.xsmall};
   `}
 `;
 
-export const DevBio = styled.p`
+export const BioSection = styled.article`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.small};
-    color: ${theme.colors.gray};
-    font-size: ${theme.font.sizes.large};
-    line-height: 2.8rem;
+    margin-bottom: ${theme.spacings.xsmall};
 
-    ${media.lessThan("medium")`
-      font-size: ${theme.font.sizes.small};
-    `}
+    p {
+      font-size: ${theme.font.sizes.xsmall};
+      line-height: 2rem;
+      color: ${theme.colors.gray};
+    }
   `}
 `;
 
-export const DevNumbers = styled.ul`
+export const NumbersSection = styled.article``;
+
+export const DevNumbersList = styled.ul`
   ${({ theme }) => css`
     list-style: none;
-
     display: flex;
     justify-content: space-between;
-
-    margin-top: ${theme.spacings.small};
-
-    ${media.lessThan("medium")`
-
-    `}
+    margin-bottom: ${theme.spacings.small};
   `}
 `;
 
-export const DevLinks = styled.ul`
+export const LinksSection = styled.article``;
+
+export const DevLinksList = styled.ul`
   ${({ theme }) => css`
     list-style: none;
-
     display: flex;
     flex-direction: column;
 
-    margin-top: ${theme.spacings.large};
-
     li {
-      margin-bottom: ${theme.spacings.xsmall};
+      margin-bottom: ${theme.spacings.xxsmall};
     }
   `}
 `;
 
-export const BackSection = styled.div`
-  ${({ theme }) => css`
-    margin-top: ${theme.spacings.xxlarge};
-    margin-bottom: ${theme.spacings.large};
-    align-self: center;
-  `}
-`;
+export const BackButtonSection = styled.section`
+  align-self: center;
 
-export const BackButton = styled.button`
-  ${({ theme }) => css`
-    height: 5rem;
-    width: 19rem;
-    background-color: ${theme.colors.lightGray};
-    color: ${theme.colors.darkGray};
-    border: none;
-    border-radius: ${theme.border.radius};
-    padding: 1.2rem;
-    font-size: ${theme.font.sizes.large};
-    font-style: italic;
-
-    &&:hover {
-      opacity: 80%;
-      transition: opacity 200ms;
-    }
-
-    ${media.lessThan("medium")`
-      font-size: ${theme.font.sizes.small};
-    `}
-  `}
+  a {
+    text-decoration: none;
+  }
 `;

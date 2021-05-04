@@ -13,11 +13,16 @@ export const Wrapper = styled.main`
   `}
 `;
 
-export const RepositoryList = styled.ul`
+export const RepositoriesSection = styled.section`
+  width: 100%;
+  height: 100vh;
+  padding: 3rem 12rem 3rem 7rem;
+  overflow: auto;
+`;
+
+export const RepositoriesList = styled.ul`
   ${({ theme }) => css`
     list-style: none;
-    width: 100%;
-    padding: 3rem 12rem 3rem 7rem;
 
     li:nth-child(n + 2) {
       border-top: 0.1rem solid ${theme.colors.lightGray};
