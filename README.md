@@ -1,5 +1,8 @@
 ## EDIT: 12/09/2021
-Projeto aposentado. Não estou mais fazendo mentorias e feedbacks deste desafio. Caso vc queira seguir com este projeto em frente, fique à vontade para fazer um fork, porém lembre-se que ele deve ser Gratuito e Open Source para toda a comunidade. Caso vc seja de alguma empresa que precisa de um modelo de testes para vagas de Desenvolvedores ReactJS a nivel JUNIOR, fique à vontade para dar um fork no modelo também, desde que preserve toda a originalidade do desafio.
+Projeto aposentado. Não estou mais fazendo mentorias e feedbacks deste desafio. Caso vc queira seguir com este projeto em frente, fique à vontade para fazer um fork, porém lembre-se que ele deve ser Gratuito e Open Source para toda a comunidade. 
+
+Caso vc seja de alguma empresa que precisa de um modelo de testes para vagas de Desenvolvedores ReactJS a nivel JUNIOR, fique à vontade para dar um fork no modelo também, desde que preserve toda a originalidade do desafio.
+
 
 # O desafio do Mozão
 *TL/DR:* Desafio em ReactJS para que as pessoas iniciantes de front-end possam desenvolver uma aplicação que vai testar seus conhecimentos e te proporcionar um feedback construtivo para crescer na stack.
