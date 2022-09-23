@@ -2,33 +2,36 @@ import styled from 'styled-components'
 
 export const Container = styled.main`
   height: 100vh;
-  display: flex;
   padding: 2rem;
+
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   h1 {
-    line-height: 3rem;
+    color: #3b4252;
     font-weight: 300;
     font-style: italic;
-    color: #3b4252;
+    line-height: 3rem;
   }
 `
 
 export const Form = styled.form`
   max-width: 520px;
   width: 100%;
+
   display: flex;
+  gap: 0.5rem;
 
   input {
     flex: 1;
-    height: 3.125rem;
-    margin-right: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
+
     border: 1px solid #3b4252;
+    border-radius: 0.5rem;
     color: #3b4252;
+    height: 3.125rem;
+    padding: 0.75rem 1.5rem;
 
     &::placeholder {
       font-weight: 400;
@@ -37,16 +40,18 @@ export const Form = styled.form`
   }
 
   button {
+    background-color: #47525e;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    height: 3.125rem;
+    padding: 0.75rem 1.25rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 3.125rem;
     gap: 0.625rem;
-    padding: 0.75rem 1.25rem;
-    border-radius: 0.5rem;
-    border: none;
-    background-color: #47525e;
-    color: white;
+
     transition: filter 0.1s ease-out;
 
     &:hover {
@@ -56,10 +61,5 @@ export const Form = styled.form`
 
   @media (max-width: 600px) {
     flex-direction: column;
-
-    input {
-      margin-right: 0;
-      margin-bottom: 0.5rem;
-    }
   }
 `
