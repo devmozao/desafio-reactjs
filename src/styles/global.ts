@@ -13,6 +13,11 @@ const GlobalStyles = createGlobalStyle`
 
   body, input, button {
     font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+  }
+
+  button {
+    cursor: pointer;
   }
 `
 
