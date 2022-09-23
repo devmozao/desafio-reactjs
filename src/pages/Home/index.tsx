@@ -1,11 +1,14 @@
 import { FormEvent, useState } from 'react'
 import { MagnifyingGlass } from 'phosphor-react'
+import { useNavigate } from 'react-router-dom'
 
 import { Container, Form, FormGroup, Input } from './styles'
 
 export default function Home() {
   const [username, setUsername] = useState('')
   const [error, setError] = useState('')
+
+  const navigate = useNavigate()
 
   function changeUsername(text: string) {
     setUsername(text)
@@ -20,17 +23,7 @@ export default function Home() {
       return
     }
 
-    fetch(`https://api.github.com/users/${username}`)
-      .then(response => {
-        if (response.status === 404) {
-          setError('Usuário não encontrado!')
-          return
-        }
-
-        return response.json()
-      })
-      .then(data => console.log(data))
-      .catch(error => setError('Ops! erro ao buscar.'))
+    navigate(`/perfil/${username}`)
   }
 
   return (
