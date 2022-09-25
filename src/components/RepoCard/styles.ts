@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-export const Container = styled.div`
+export const Container = styled.li`
+  border-bottom: 1px solid #eceff4;
   color: #3b4252;
   max-width: 900px;
+  padding-bottom: 1rem;
   width: 100%;
 
   p {
